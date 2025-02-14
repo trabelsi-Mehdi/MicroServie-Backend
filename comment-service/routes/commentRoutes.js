@@ -24,7 +24,6 @@ router.post('/', async (req, res) => {
 
 router.get("/:postId", async (req, res) => {
     try {
-        // Validate postId format (must be a valid MongoDB ObjectId)
         if (!req.params.postId.match(/^[0-9a-fA-F]{24}$/)) {
             return res.status(400).json({ error: "Invalid post ID format" });
         }
